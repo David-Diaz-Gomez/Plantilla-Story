@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Página</title>
+  <link rel="stylesheet" href="css.css">
+  <script src="https://kit.fontawesome.com/3b161c540c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <span onclick="cerrarPopup()" class="close">&times;</span>
+      <form id="fontForm">
+        <label for="googleFontsLink">Ingrese el enlace de Google Fonts:</label>
+        <input type="text" id="googleFontsLink" name="googleFontsLink">
+        <input type="submit" value="Aplicar">
+      </form>
+    </div>
+  </div>
+  <header>
+    <div class="logo">
+      <img src="https://cdn.arcgis.com/sharing/rest/content/items/02eefc71b65a4db4bd7f1ab03930d225/resources/mj8xfYRR5IT77Nom4kcJp.png?w=400" alt="Logo">
+    </div>
+    <h1>Plantilla Storymap</h1>
+    <div class="storymaps">
+      <a href="https://storymaps.arcgis.com" target="_blank">StoryMaps</a>
+
+    </div>
+    <div class="fuen">
+      <a href="" id="abrirPopup">Cambiar fuente</a>
+  </div>
+  </header>
+  <div class="imagen-principal">
+    <div class="fondo-opaco"></div>
+    <div class="texto-encima-imagen">
+      <h1>Ejemplo de título de Storymap</h1>
+      <h2>Ejemplo de Subtítulo de Storymap</h2>
+      <p>Semillero de innovacion geográfica Geogeeks - Esri Colombia.</p>
+    </div>
+    <img src="./img/principal.png" alt="Imagen principal">
+  </div>
+  <main>
+    <div class="contenedor-cita">
+        <div class="cita">
+          <img src="data:image/png;base64,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" alt="Icono de comillas">
+          <h2> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It</h2>
+        </div>
+      </div>
+      <section class="completo">
+        <div class="static-bg" id="section1" style="background-image: url('./img/Fondo1.jpg');">
+            <div class="texto-encima-imagen">
+                <div class="contenido1">
+                    <h2>Primera Sección</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                  </div>
+            </div>
+          </div>
+          
+          <div class="static-bg" id="section2" style="background-image: url('./img/Fondo2.jpg');">
+            <div class="texto-encima-imagen" >
+                <div class="contenido2">
+                    <h2>Segunda Sección</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                  </div>
+            </div>
+          </div>
+
+          <div class="static-bg" id="section3" style="background-image: url('./img/fondo.gif');">
+            <div class="texto-encima-imagen" >
+                <div class="contenido3">
+                    <h2>Segunda Sección</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.</p>
+                  </div>
+            </div>
+          </div>
+      </section>
+
+      <section class="article-section">
+        <div class="article-content">
+          <div class="article-body">
+            <div class="article-text">
+                <h2>Titulo del Artículo</h2>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+              </p>
+              <!-- Más párrafos si es necesario -->
+            </div>
+            <div class="article-image">
+              <img src="./img/1.jpg" alt="Imagen Lateral">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="article-section">
+        <div class="article-content">
+          <div class="article-body">
+            <div class="article-image">
+              <img src="./img/2.jpg" alt="Otra Imagen Lateral">
+            </div>
+            <div class="article-text">
+              <h2>Título del Segundo Artículo</h2>
+              <p>
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+              </p>
+              <!-- Más párrafos si es necesario -->
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="espaciado"><h2 class="title">Mapa de capas</h2></div>
+      <section class="map">
+        <div id="map"></div>
+        <div id="searchWidget"></div>
+  <div id="legendWidget"></div> 
+    </section>
+    <section>
+      <div class="container">
+        <h2 class="title">Título del Texto</h2>
+        <div class="text">
+          <p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.</p>
+          <p>Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32</p>
+        </div>
+      </div>
+    </section>
+    <div><h2 class="title">Swipe</h2></div>
+    <section class="map">
+        <div id="map1"></div>
+    </section>
+    <section>
+      <div class="container">
+        <h2 class="title">Título del Texto</h2>
+        <div class="text">
+          <p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto.</p>
+        </div>
+      </div>
+    </section>
+    <div class="conten">
+      <!-- Features Section - Home Page -->
+      <section id="features" class="features">
+ 
+       <div id="drag-container">
+         <div id="spin-container">
+           <!-- Add your images (or video) here -->
+           <img src="./masonry-portfolio/masonry-portfolio-1.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-2.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-3.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-4.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-5.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-6.jpg" alt="">
+           <img src="./masonry-portfolio/masonry-portfolio-7.jpg" alt="">
+         </div>
+         <div id="ground"></div>
+       </div>
+     </section></div>
+  <div><h2 class="title">MapTour</h2></div>
+    <section class="mapTour">
+      
+      <div id="viewDiv"></div>
+  <div class="slideControls" id="prevBtn">&lt;</div>
+  <div class="slideControls" id="nextBtn">&gt;</div>
+  <div class="legend">
+    <h3>Leyenda</h3>
+    <div class="legend-item">
+      <span style="background-color: #FF0000;"></span> <label id="l1"></label>
+    </div>
+    <div class="legend-item">
+      <span style="background-color: #00FF00;"></span> <label id="l2"></label>
+    </div>
+    <div class="legend-item">
+      <span style="background-color: #0000FF;"></span> <label id="l3"></label>
+    </div>
+    <div class="legend-item">
+      <span style="background-color: #FFFF00;"></span> <label id="l4"></label>
+    </div>
+    <div class="legend-item">
+      <span style="background-color: #00FFFF;"></span> <label id="l5"></label>
+    </div>
+    <div class="legend-item">
+      <span style="background-color: #FF00FF;"></span> <label id="l6"></label>
+    </div>
+  </div>
+  <div id="locationDetails">
+    <h3>Detalles de la Ubicación</h3>
+    <div id="locationImage"></div>
+    <div id="locationTitle"></div>
+    <div id="locationReview"></div>
+  </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="fuentes">
+      <h2>Fuentes</h2>
+      
+      <div class="centrado">
+        <div class="izquierda">
+          <ul>
+            <li>Titulo1</li>
+            <li>Titulo2</li>
+            <li>Titulo3</li>
+            <li>Titulo4</li>
+          </ul>
+        </div>
+        <div class="linea-vertical"></div>
+        <div class="derecha">
+          <ul>
+            <li><a href="#">Nombre 1</a></li>
+            <li><a href="#">Nombre 2</a></li>
+            <li><a href="#">Nombre 3</a></li>
+            <li><a href="#">Nombre 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cred">
+    <div class="footer-col">
+        <h4>Siguenos</h4>
+        <div class="social-links">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+    <div class="creditos">
+        <p>2023 © Semillero de innovacion geográfica Geogeeks Todos los derechos reservados</p>
+      </div>
+</div>
+  </footer>
+  <script src="./funcionalidades.js"></script>
+  <script src="https://js.arcgis.com/4.25/"></script>
+  <script src="./app.js"></script>
+  <script src="./app2.js"></script>
+  <script src="./mapT.js"></script>
+  <script src="./popUp.js"></script>
+  <script src="./ajax.js"></script>
+</body>
+</html>

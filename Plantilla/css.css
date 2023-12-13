@@ -1,0 +1,925 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    
+    background-color: #f3f3f3;
+  }
+  
+  header {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff; /* Color de fondo del header */
+    padding: 15px;
+    display: flex;
+    height: calc((100vh/16)*1);
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    z-index: 100;
+  }
+  header h1{
+    font-size: small;
+    font-weight: 100;
+    margin-left: 20px;
+  }
+  
+  .imagen-principal {
+    position: relative;
+    height: calc(100vh - (calc((100vh/9)*1))); /* Ajustar según el tamaño de la cabecera */
+    overflow: hidden;
+  }
+    
+  .imagen-principal img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+    opacity: 0.7; /* Opacidad de la imagen */
+  }
+  
+  .fondo-opaco {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color oscuro con opacidad */
+    z-index: 1;
+  }
+  
+  .texto-encima-imagen {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Color de texto blanco */
+    z-index: 2;
+  }
+  
+  .texto-encima-imagen h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+  }
+  
+  .texto-encima-imagen h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  
+  .texto-encima-imagen p {
+    font-size: 1.2em;
+  }
+  .texto-encima-imagen h1,
+.texto-encima-imagen h2,
+.texto-encima-imagen p {
+  /* Estilos de texto sin opacidad */
+  color: #fff;
+  /* Otros estilos de texto si los necesitas */
+}
+.storymaps {
+    margin-left: auto; /* Mueve el contenido a la derecha */
+    margin-right: 80px;
+    transition: 0.5s; 
+  }
+  .fuen{
+    margin-right: 80px;
+    transition: 0.5s; 
+  }
+  .fuen a {
+    text-decoration: none; /* Sin subrayado del enlace */
+    color: #000; /* Color del texto */
+    font-size: small; /* Tamaño del texto */
+    transition: color 0.5s; /* Transición de color */
+  }
+  .fuen a:hover {
+    color: #f2eeee; /* Color al hacer hover */
+  }
+  .fuen:hover {
+    background-color: #9c9b9b;
+    padding: 10px 20px;
+    border-radius: 10px; /* Color al hacer hover */
+  }
+  .storymaps a {
+    text-decoration: none; /* Sin subrayado del enlace */
+    color: #000; /* Color del texto */
+    font-size: small; /* Tamaño del texto */
+    transition: color 0.5s; /* Transición de color */
+  }
+  
+  .storymaps a:hover {
+    color: #f2eeee; /* Color al hacer hover */
+  }
+  .storymaps:hover {
+    background-color: #9c9b9b;
+    padding: 10px 20px;
+    border-radius: 10px; /* Color al hacer hover */
+  }
+  
+  .logo img {
+    max-width: 70px; /* Tamaño máximo del logo */
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  footer {
+    background-color: #e8e1e1;
+    padding: 20px;
+  }
+  
+  .fuentes {
+    text-align: center;
+  }
+
+  .fuentes h2{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .linea-vertical {
+    width: 2px;
+    border-radius: 10px;
+    height: 100px; /* Altura de la línea */
+    background-color: #ccc; /* Color de la línea */
+    margin: 0 auto; /* Centra la línea horizontalmente */
+  }
+  
+  .centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea verticalmente los elementos */
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Elimina el margen */
+  }
+  
+  .izquierda,
+  .derecha {
+    flex: 1; /* Utiliza el espacio disponible */
+  }
+  .izquierda li,
+.derecha li {
+  margin-bottom: 8px; /* Espaciado entre elementos li */
+}
+  
+  .izquierda {
+    text-align: right; /* Alinea a la derecha */
+    padding-right: 10px; /* Espaciado para separar la línea */
+    font-weight: 600;
+  }
+  
+  .derecha {
+    text-align: left; /* Alinea a la izquierda */
+    padding-left: 10px; /* Espaciado para separar la línea */
+  }
+  
+  
+  
+  .derecha a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .derecha a:hover {
+    color: #FF0000;
+  }
+  
+  .footer-col h4{
+    text-align: center;
+  }
+  .footer-col .social-links a {
+	color: #FFF;
+	background-color: rgba(9, 9, 9, 0.4);
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	text-align: center;
+	margin: 0 10px 10px 0;
+	line-height: 40px;
+	transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+	color: #fcfcfc;
+	background-color: #181818;
+}
+
+.cred{
+    display: flex;
+    justify-content: center;
+}
+
+.creditos {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .creditos p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .creditos p a {
+    text-decoration: none;
+    color: #FF6347;
+  }
+  
+  .creditos p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos para el contenedor de la cita */
+/* Estilos para el contenedor de la cita */
+.contenedor-cita {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Espacio superior */
+    margin-bottom: 60px;
+  }
+  
+  /* Estilos para la caja de la cita */
+  .cita {
+    text-align: center;
+    border: 2px solid #853E3B; /* Borde de 1px con color negro */
+    padding: 20px; /* Espaciado interno */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    width: 750px;
+    position: relative; /* Agrega posición relativa para el icono */
+    text-align: center;
+    color: #373333;
+    font-style: oblique;
+  }
+  .cita::before {
+    content: '';
+    width: 35px; /* Ancho del círculo */
+    height: 35px; /* Altura del círculo */
+    background-color: #f3f3f3; /* Fondo transparente */
+    border: 1px solid transparent; /* Borde del círculo */
+    border-radius: 50%; /* Forma circular */
+    position: absolute; /* Posición absoluta para el círculo */
+    top: -15px; /* Ajusta el círculo hacia arriba */
+    left: 50%; /* Ajusta el círculo a la mitad del contenedor */
+    transform: translateX(-50%); /* Centra el círculo horizontalmente */
+  }
+  
+  /* Estilos para el icono de comillas */
+  .cita img {
+    width: 30px; /* Ancho del icono */
+    height: auto; /* Altura automática */
+    position: absolute; /* Posición absoluta para el icono */
+    top: -15px; /* Ajusta el icono hacia arriba */
+    left: 50%; /* Ajusta el icono a la mitad del contenedor */
+    transform: translateX(-50%); /* Centra el icono horizontalmente */
+  }
+  
+  /* Estilos para el texto de la cita */
+  .cita h2 {
+    font-size: 1.7em; /* Tamaño del texto */
+    font-weight: 400;
+    margin: 0; /* Elimina el margen por defecto del h2 */
+    line-height: 35px;
+  }
+
+ 
+  .contenido1{
+    width: 30vw;
+    height: auto;
+    text-align: justify;
+    background-color: #511515;
+    padding: 30px;
+    line-height: 30px;
+  }
+  
+  .contenido2 {
+    width: 28vw;
+    height: auto;
+    text-align: justify;
+    background-color: #511515;
+    padding: 30px;
+    line-height: 30px;
+    float: right;
+  }
+  
+  .contenido3{
+    width: 30vw;
+    height: auto;
+    text-align: justify;
+    background-color: #511515;
+    padding: 30px;
+    line-height: 30px;
+  }
+  /* Estilos generales */
+
+
+  
+  .static-bg {
+    height: 800px; /* Altura de la primera sección */
+    background-image: url('./img/Fondo1.jpg'); /* URL de la primera imagen de fondo */
+    background-attachment: fixed; /* Fijar la imagen de fondo */
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .dynamic-bg {
+    height: 800px; /* Altura de la segunda sección */
+    background-image: url('./img/Fondo2.jpg'); /* URL de la segunda imagen de fondo */
+    background-attachment: fixed; /* Fijar la imagen de fondo */
+    background-position: center;
+    background-size: cover;
+    display: none; /* Oculta la segunda imagen de fondo inicialmente */
+  }
+  /* Estilos para el texto dentro de .contenido */
+  .contenido h2 {
+    font-size: 2em;
+    margin: 0;
+    color: #FFF;
+  }
+  
+  .contenido p {
+    font-size: 1.2em;
+    color: #FFF;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    /* Elimina display: flex */
+    justify-content: center;
+    align-items: center;
+  }
+  .show {
+    display: flex;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative; /* Para usar position:relative */
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #888;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 22px); /* Restar el ancho del padding y el borde */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+@media(max-width: 767px) {
+	.footer-col {
+		width: 50%;
+		margin-bottom: 30px;
+	}
+}
+
+@media(max-width: 574px) {
+	.footer-col {
+		width: 100%;
+	}
+}
+.static-bg,
+.static-bg-2 {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.static-bg {
+    height: 200vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+}
+
+.completo{
+    height: 200%;
+}
+
+.static-bg .texto-encima-imagen,
+.static-bg-2 .texto-encima-imagen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+
+.article-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+/* Resto de tus estilos... */
+/* Estilos para la sección de artículo */
+/* Estilos para la sección de artículo */
+
+.espaciado{
+  margin-top: 40px;
+  margin-bottom: -10px;
+}
+.article-section {
+    padding: 20px 0; /* Ajusta el padding según necesites */
+    background-color: #f8f8f8; /* Color de fondo */
+    margin-left: 5em; /* Margen a la izquierda */
+    margin-right: 5em; /* Margen a la derecha */
+  }
+  
+  .article-content {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .article-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .article-text {
+    width: 50%; /* Ajusta el ancho del texto */
+    text-align: justify;
+  }
+  
+  .article-text h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .article-text p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+  
+  .article-image {
+    width: 45%; /* Ajusta el ancho de la imagen */
+  }
+  
+  .article-image img {
+    margin-top: 100px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .article-section {
+    margin-bottom: -30px; /* Ajusta el margen negativo según sea necesario */
+  }
+  
+  /* Añade un margen inferior al último elemento para evitar que se solapen */
+  .article-section:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior del último elemento */
+  }
+  
+ /* Estilos para el contenedor del mapa */
+.map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura de la sección */
+    margin: 40px;
+    padding: 0;
+  }
+  
+  /* Estilos para el contenedor del mapa interno */
+  #map {
+    width: 90%; /* Ancho del contenedor del mapa */
+    height: 90%; /* Altura del contenedor del mapa */
+    max-width: 95vw; /* Ancho máximo */
+    max-height: 85vh; /* Altura máxima */
+    border: 2px solid #ccc; /* Borde del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+  }
+  
+  #map1 {
+    width: 90%; /* Ancho del contenedor del mapa */
+    height: 90%; /* Altura del contenedor del mapa */
+    max-width: 95vw; /* Ancho máximo */
+    max-height: 85vh; /* Altura máxima */
+    border: 2px solid #ccc; /* Borde del contenedor */
+    border-radius: 8px; /* Bordes redondeados */ 
+  }
+
+  .container {
+    width: 87%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: #f9f9f9;
+  }
+  .title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .text {
+    text-align: justify;
+  }
+  .text p {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px;
+  }
+
+  #mapContainer {
+    position: relative;
+    width: 80%;
+    margin: 50px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .mapTour {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 600px; /* Altura del contenedor */
+    width: 100%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente con margen automático */
+    margin-bottom: 10vh;
+  }
+  #viewDiv {
+    border-radius:10px ;
+    height: 600px;
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    margin-left: 1%;
+  }
+  .slideControls {
+    position:absolute;
+    top: calc(50% - 15px);
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  #prevBtn {
+    left: 20px;
+  }
+  
+  #nextBtn {
+    right: 20px;
+  }
+  
+  /* Estilos para la leyenda */
+  .legend {
+    position: absolute;
+    bottom: 10px;
+    left: 6%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    max-width: 200px;
+  }
+  
+  .legend h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .legend-item span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+  
+  /* Estilos para los detalles de la ubicación */
+  #locationDetails {
+    position: absolute;
+    top: 5%;
+    right: 70px;
+    z-index: 10;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 300px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  #locationDetails h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+  }
+  
+  #locationImage img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #locationTitle {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  
+  #locationReview {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+
+  /* Estilos responsivos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .article-body {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .article-text,
+    .article-image {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  /*coursel*/
+  .conten{
+    height: 50vh;
+    display: block;
+  }
+  #drag-container, #spin-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  
+  #drag-container img, #drag-container video {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px #fff;
+            box-shadow: 0 0 8px #fff;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  }
+  
+  #drag-container img:hover, #drag-container video:hover {
+    -webkit-box-shadow: 0 0 15px #fffd;
+            box-shadow: 0 0 15px #fffd;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+  
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+  }
+  
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+  }
+  .features{
+    margin-top: 10%;
+  }
+  .features .features-item {
+    color: rgba(var(--default-color-rgb), 0.8);
+  }
+  
+  .features .features-item+.features-item {
+    margin-top: 100px;
+  }
+  
+  @media (max-width: 768px) {
+    .features .features-item+.features-item {
+      margin-top: 40px;
+    }
+  }
+  
+  .features .features-item h3 {
+    font-weight: 700;
+    font-size: 26px;
+  }
+  
+  .features .features-item .btn-get-started {
+    background-color: var(--primary-color);
+    color: var(--contrast-color);
+    padding: 8px 30px 10px 30px;
+    border-radius: 4px;
+  }
+  
+  .features .features-item .btn-get-started:hover {
+    background-color: rgba(var(--primary-color-rgb), 0.9);
+  }
+  
+  .features .features-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .features .features-item ul li {
+    padding-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .features .features-item ul li:last-child {
+    padding-bottom: 0;
+  }
+  
+  .features .features-item ul i {
+    font-size: 20px;
+    padding-right: 4px;
+    color: var(--primary-color);
+  }
+  
+  .features .features-item img {
+    border: 6px solid var(--background-color);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features .features-item .features-img-bg {
+    position: relative;
+    min-height: 500px;
+  }
+  
+  @media (max-width: 640px) {
+    .features .features-item .features-img-bg {
+      min-height: 300px;
+    }
+  }
+  
+  .features .features-item .features-img-bg img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  
+  .features .features-item .image-stack {
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .features .features-item .image-stack .stack-back {
+    grid-column: 4/-1;
+    grid-row: 1;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .features .features-item .image-stack .stack-front {
+    grid-row: 1;
+    grid-column: 1/span 8;
+    margin-top: 20%;
+    width: 100%;
+    z-index: 2;
+  }
+  
+
+  @-webkit-keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @-webkit-keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
+  @keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
