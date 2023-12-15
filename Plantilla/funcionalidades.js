@@ -1,3 +1,7 @@
+/*Preferiblemente solo modificar los apartados que digan "modificar" */
+
+// Codigo para cambiar las imagenes del apartado de imagenes estaticas con contenedores de información 
+//No modificable
 window.addEventListener('scroll', function() {
     let firstSection = document.querySelector('.static-bg');
     let secondSection = document.querySelector('.dynamic-bg');

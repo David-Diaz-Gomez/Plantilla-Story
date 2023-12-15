@@ -1,3 +1,7 @@
+//Configuracion de carrusel (preferiiblemente no modificar de no se desarrollador)
+
+//LOGICA DEL CARRUSEL DE IMAGENES
+
 // You can change global variables here:
 var radius = 240; // how big of the radius
 var autoRotate = true; // auto rotate or not

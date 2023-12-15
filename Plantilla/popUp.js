@@ -1,3 +1,7 @@
+//LOGICA PARA MODIFICAR FUENTES
+
+//PREFERIBLEMENTE NO MODIFICAR DE NO SER DESARROLLADOR
+
 // Función para abrir el popup
 document.getElementById('abrirPopup').addEventListener('click', function(event) {
     event.preventDefault();
@@ -44,10 +48,6 @@ document.getElementById('abrirPopup').addEventListener('click', function(event) 
     }
   });
   
-  // Función para extraer el nombre y el peso de la fuente desde el enlace de Google Fonts
-  // Función para extraer el nombre y el peso de la fuente desde el enlace de Google Fonts
- // Función para extraer el nombre y el peso de la fuente desde el enlace de Google Fonts
-// Función para extraer el nombre y el peso de la fuente desde el enlace de Google Fonts
 // Función para extraer el nombre y el peso de la fuente desde el enlace de Google Fonts
 function extractFontNameAndWeight(link) {
     const familyStartIndex = link.indexOf('family=') + 'family='.length;
