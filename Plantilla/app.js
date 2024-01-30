@@ -12,10 +12,9 @@ require([
     "esri/widgets/ScaleBar",
     "esri/widgets/Home",
     "esri/widgets/Fullscreen",
-    "esri/widgets/Search",
   "esri/widgets/Legend",
   "esri/layers/FeatureLayer",
-  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Search, Legend,FeatureLayer) {
+  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Legend,FeatureLayer) {
     // Configuración de la API Key para autenticación
     // Reemplaza con tu API Key obtenida en tu cuenta developer
     esriConfig.apiKey = "AAPK70593acd587d4c8c90ea672129db5386KUUOo0zmbNlIIa8LXOQR1bB4x9fbhyAZxlj49pvQTbwlH8xMRDtduOCn0QYOlAex"; // Reemplaza con tu API Key
@@ -32,12 +31,7 @@ require([
     zoom: 10, // Nivel de zoom inicial
   });
 
-  // Creación de widgets y configuración de sus propiedades
-  var searchWidget = new Search({
-    view: view, //agregar a la vista
-    position: "bottom-right", //agregar abajo a la derecha
-    includeDefaultSources: false, // Configuración de fuentes de búsqueda personalizadas
-  });
+  // Creación de widgets y configuración de sus propiedade
 
   var basemapToggle = new BasemapToggle({
     view: view,
