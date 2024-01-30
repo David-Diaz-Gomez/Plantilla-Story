@@ -16,7 +16,7 @@ require([
   // Cargar el segundo WebMap como la capa "después"
   var webmapAfter = new WebMap({
     portalItem: {
-      id: "24da1e8a67534de58d5136a7f12d5443" // ID del segundo WebMap (cambiar id de webmap)
+      id: "24da1e8a67534de58d5136a7f12d5443" // ID del WebMap (cambiar id de webmap)
     }
   });
 
