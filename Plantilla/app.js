@@ -15,7 +15,8 @@ require([
     "esri/widgets/Search",
   "esri/widgets/Legend",
   "esri/layers/FeatureLayer",
-  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Search, Legend,FeatureLayer) {
+  "esri/widgets/Popup"
+  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Search, Legend,FeatureLayer, Popup) {
     // Configuración de la API Key para autenticación
     // Reemplaza con tu API Key obtenida en tu cuenta developer
     esriConfig.apiKey = "AAPK70593acd587d4c8c90ea672129db5386KUUOo0zmbNlIIa8LXOQR1bB4x9fbhyAZxlj49pvQTbwlH8xMRDtduOCn0QYOlAex"; // Reemplaza con tu API Key
@@ -35,7 +36,6 @@ require([
   // Creación de widgets y configuración de sus propiedades
   var searchWidget = new Search({
     view: view, //agregar a la vista
-    container: "searchWidget", // Contenedor del widget de búsqueda
     position: "bottom-right", //agregar abajo a la derecha
     includeDefaultSources: false, // Configuración de fuentes de búsqueda personalizadas
   });
@@ -74,11 +74,33 @@ require([
 
   // Creación de una capa de entidades (FeatureLayer)
   var featureLayer = new FeatureLayer({
-    //modificar url de imagen (featurelayer)
-    url:
-      "https://services.arcgis.com/8DAUcrpQcpyLMznu/arcgis/rest/services/Perimetro_urbano/FeatureServer",
-    // Otras configuraciones opcionales para la capa de entidades
-  });
+    url: "https://services.arcgis.com/8DAUcrpQcpyLMznu/arcgis/rest/services/Perimetro_urbano/FeatureServer/0",
+    outFields: ["*"],
+    popupTemplate: {
+        title: "Perimetro urbano",
+        content: [
+            {
+                type: "fields",
+                fieldInfos: [
+                    {
+                        fieldName: "Año",
+                        label: "Año"
+                    },
+                    {
+                        fieldName: "Año2",
+                        label: "Año2"
+                    },
+                    {
+                        fieldName: "POLY_AREA",
+                        label: "POLY_AREA"
+                    }
+                ]
+            }
+        ]
+    },
+    popupEnabled: true
+});
+
 
   /** En caso de querer agregar otras capas:
    
@@ -101,4 +123,5 @@ require([
 
   // Agregar la capa de entidades al mapa
   map.add(featureLayer);
+  
 });
