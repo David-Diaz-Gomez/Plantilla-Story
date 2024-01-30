@@ -15,8 +15,7 @@ require([
     "esri/widgets/Search",
   "esri/widgets/Legend",
   "esri/layers/FeatureLayer",
-  "esri/widgets/Popup"
-  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Search, Legend,FeatureLayer, Popup) {
+  ], function(esriConfig, Map, MapView, BasemapToggle, Locate, ScaleBar,Home,Fullscreen, Search, Legend,FeatureLayer) {
     // Configuración de la API Key para autenticación
     // Reemplaza con tu API Key obtenida en tu cuenta developer
     esriConfig.apiKey = "AAPK70593acd587d4c8c90ea672129db5386KUUOo0zmbNlIIa8LXOQR1bB4x9fbhyAZxlj49pvQTbwlH8xMRDtduOCn0QYOlAex"; // Reemplaza con tu API Key
