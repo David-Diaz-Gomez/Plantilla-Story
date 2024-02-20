@@ -23,8 +23,13 @@
     <div class="popup-content">
       <span onclick="cerrarPopup()" class="close">&times;</span>
       <form id="fontForm">
-        <label for="googleFontsLink">Ingrese el enlace de Google Fonts:</label>
-        <input type="text" id="googleFontsLink" name="googleFontsLink">
+        <label for="googleFontsSelect">Seleccione un enlace de Google Fonts:</label>
+        <select id="googleFontsSelect" name="googleFontsSelect">
+          <option value="https://fonts.googleapis.com/css2?family=Whisper&display=swap">Whisper</option>
+          <option value="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:wght@300&family=Rubik+Bubbles&display=swap">PT Serif, Roboto, Rubik Bubbles</option>
+          <option value="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap">Noto Sans KR</option>
+          <option value="https://fonts.googleapis.com/css2?family=Kalnia:wght@300&display=swap">Kalnia</option>
+        </select>
         <input type="submit" value="Aplicar">
       </form>
     </div>
@@ -46,9 +51,9 @@
   <div class="imagen-principal">
     <div class="fondo-opaco"></div>
     <div class="texto-encima-imagen">
-      <h1>Ejemplo de título de Storymap</h1>
+      <h1>Titulo</h1>
       <h2>Ejemplo de Subtítulo de Storymap</h2>
-      <p>Semillero de innovación geográfica Geogeeks - Esri Colombia.</p>
+      <p>Semillero de Innovación Geográfica Geogeeks - Esri Colombia.</p>
     </div>
     <!-- Imagen principal-->
     <img src="./img/principal.png" alt="Imagen principal">
@@ -66,7 +71,7 @@
       <section class="completo">
         <!-- Modificar la imagen (modificar de la siguiente linea le 'url') -->
         <div class="static-bg" id="section1" style="background-image: url('./img/Fondo1.jpg');">
-            <div class="texto-encima-imagen">
+            <div class="texto-encima-imagen1">
                 <div class="contenido1">
                   <!-- Modificar el titulo del contenedor 1 -->
                     <h2>Primera Sección</h2>
@@ -77,7 +82,7 @@
           </div>
           <!-- Modificar la imagen (modificar de la siguiente linea le 'url') -->
           <div class="static-bg" id="section2" style="background-image: url('./img/Fondo2.jpg');">
-            <div class="texto-encima-imagen" >
+            <div class="texto-encima-imagen1" >
                 <div class="contenido2">
                   <!-- Modificar el titulo del contenedor 2 -->
                     <h2>Segunda Sección</h2>
@@ -89,7 +94,7 @@
 
           <!-- Modificar la imagen (gif) (modificar de la siguiente linea le 'url') -->
           <div class="static-bg" id="section3" style="background-image: url('./img/fondo.gif');">
-            <div class="texto-encima-imagen" >
+            <div class="texto-encima-imagen1" >
                 <div class="contenido3">
                   <!-- Modificar el titulo del contenedor 3 -->
                     <h2>Segunda Sección</h2>
@@ -99,6 +104,12 @@
             </div>
           </div>
       </section>
+      <div class="contenedor-cita">
+        <div class="cita">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIMAAABeCAYAAAAAPaeXAAAAAXNSR0IArs4c6QAAB4tJREFUeF7tnf1x4zYQxUHKfUTuIhPf2XIlkctINDc+T8ZJGfZVYsVnZ9JFVMiJyIBfIiWQAAjsw4KW/7QgiXj8vd3FkoQy8YH+/lr9vCyKi/Xm9e3rB5p2b6qNBkIWu833f567L2ZzF6WdvJD37VylvDsWYs46tBpk8ichxbqe627z+n45exg6APwqhFhqTvSJEHOE4Y/Vp1VeiJXoGqEz0SLPbr9s37bNv2YVGdTkF3t5LzMlwPjfsRCm8am8ro2EwwffM8UsYKgcIJ8GooBWikyK7e/f329TOcmm43SEoP24rimShuHx+tNXIeRQKjDpJ+YQHaZC0KaGjimShMEXgpaSTDxv/n6/M1LDcIAvBJ0p7fJ8f/vb9t9dUjBMSQeG85hcIRkQgoM0tSmSgKEUQC7uO8uicF5NaJlZm+El3OTbTypNwR6GOiUcegThlWAfHZQZ5H7xZLNKmiyPlHdsYYAIUCvHuZAEmKHhh2fNABRACJE95PmPZ1VATXYVwRur2mChUoKuaRb6G3dCZN9YRQagAOXkuV6jAJphJ6R8aFrzbGB4/PzLWmSZahxR/rGGAJgad0We3XVb0Up0FjA83lw9kawUelhlD1wjgTpMwpVCVwUtBG0DitKGps8GOWFUANMxIl7HpAWzGaJFBowTzAIgTvbQd3AzQxQYAE5oW6wxT/bYd2OKZTczwGH48/PVC2nzRLgJEAMWQFScZAYYDICQyL42UOCRr5o8Lr5BYKAGIZV7E8hB8LzOQg5DnRv/owrHyYBAvHwO0VInhYE8N3qERCo4dZ9LXSeFAIG06XQGocKCGISgdRJJZDiDAAEh+G17wWGgBiGVGoE4IgQHIXiaoAZBCMH+RhRAaiABISgM1KsGBUJz4yay+HP9LvqLbnRNtSBpAgACmRtcT/bYeOo2O3WK9IaBuqFUiU/nhlAwkDeUACnSGwbqQonaDSFgANRKkMjoBQM1COpE5fn+ktv9iV2AECAIUHNtMgyAsAhxg29kABgCtoKaBAPCDSmkBwAIUENMgmFuIkyJDghDoNJDM39nGBAgoEVwhQGxlI5RLznBAHGDEGLz+u50XK4n03c8xBARltPWoqPcIDxv0PA90ab3UzeWmu+PYQhrGDBu4B0VYIaIEBWsr02g0gP3WgFliFi9FavIMHcRTKlBvf4RDGGEAdFcqi4/8N5S5yMYwgzD9ZW6mZX8sfBQ9/HZuNx1zEcxxCgMMBGYLycfQYaIvZIah+H6Srq6aNJ4xikCaYhYhaOxA4kUIbYjxm9YwaRJdQwxegvduQ9GBlhoZCDCEAxQQzCIjloYYMsotYhgvG0vagVRwsig86qFgf6mzo4XGThCFxlw3cbq22PXC4MdyEdU4cjEEToYoIZgkipPIgPqQkxzAjg4QgsD0hBMoqMGBlz1zCVXHsMALRwZ1U06GDC9hcMZYLcdHzpF1FJEf0ioBwPaEX1H8nk2Aloz9UWICkQfBlTbdbjLE1UMdVhxDVEKEy1SHsOAThE6LKKJUcJAvMOKQ7s+6N4LNt/bwsDAEcfH29vX2GYyIcYgO692x4vb6PwAAx9HnECh2+fYTki3UcjOq9uRYVLHAYb49cK4Ppl4zrP9A+Wjdgyj42m0JNwNvwsDh3rBZJiynqD6fQhG9YJZh85PA5gG275ewpCAI7QOCQ0Fv3rBeBqD1lUVDNXvQ1L+DpRxVhMHBI0UEfsLE6ffvi0IFBUMfItHW5G8oUBfpbSdmOM4LyjqyAC+HuE4Q/vh07uYCabKQVmm3jF1hqGW9AxD/bNECefKvjs87hZKuG46iRC+kSGFZaU5W5xh8LqNMJtJ4VSC4nOjzAyK6MosHjfKZIxbsOZIcDRianicyYqqUsMjOs4HBg9HKA2hd0I7Y27/Bh9DzCZN+KSI2UQGT0PMAoYQz17MYjXhkSKqcqNsR4OeqbSPdm4jPUWoNEi2Jd9o5b1f5CyaTj55slEy+aZTAEOUMCRdPAUQQWmQ+qoqhCGSv2q5eX2/dMspw6OTTZeBDFHCkGrjKfRuLylGyBDFc2OPdG57Oza05zJKFx9SrBtCGqKFITFXeFfOOhjSi5DTL9nr5t/CkJIQId1wLEoq1yhCpoeTNJFKF44ShITqJ5LI2Huiin10IKgTtLUD79sAyZ60ir4/g/WyEAQC8+hABkLbju6eEMyv0VkjUA0EgsC5I0mdIrV7OtXp4gWxM6wRiwggtEDwuV5BGhG0BeRxhCiKhdoqON5foM6azwQYXMAiKRZHl5Yj6+4oEYI6JNoCUkXJi3WMh4wolo9j8zZuJB4hZUBCoi0M8VJG2IaSzXyNMByqa4Q78ALYiNSMARkjmhmsYOiKIfeLJ5mJlYuIFmOjCWBxbL0hpGkjYrGsXVraiFNf0FEP6gb4HQre0WBIj8BQsDCDU2Q4WW3s85XIsxshxdoGot6YyC5wPt6BNzRQZFLeTIiYUfevOp7SZBiGwMgKsRwRhdXkQwHRryku1hZgeD0tHfq4m88LAsPxwSm3qP8VKnJk+VLIYpcvii3lFjxUAvl8rtLhh7hY5vtiqXQocrH9sn3b+nwm5Xv/B+IhT2LfX3fYAAAAAElFTkSuQmCC" alt="Icono de comillas">
+          <h2> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It</h2>
+        </div>
+      </div>
       <!-- Apartado de articulo 1 con imagen -->
       <section class="article-section">
         <div class="article-content">
@@ -230,6 +241,7 @@
        </div>
      </div>
      <!-- Seccion de detalles (tarjeta de informacion) -->
+     <div class="cont-ocultar">
      <div id="locationDetails">
        <!-- Contenedor de imagen -->
        <div id="locationImage"></div>
@@ -237,7 +249,18 @@
        <div id="locationTitle"></div>
        <!-- Contenedor de contenidos -->
        <div id="locationReview"></div>
+       
      </div>
+     <div class="nextButton" onclick="toggleLocationDetails()">»</div>
+    </div>
+
+<!-- Script JavaScript para manejar la visibilidad de locationDetails -->
+<script>
+    function toggleLocationDetails() {
+        var locationDetails = document.getElementById("locationDetails");
+        locationDetails.classList.toggle("hidden");
+    }
+</script>
        </section> 
   </main>
 
@@ -285,17 +308,17 @@
 </div>
 <!-- Creditos de creacion -->
     <div class="creditos">
-        <p>2023 © Semillero de innovación geográfica Geogeeks Todos los derechos reservados</p>
+        <p>2023 © Semillero de Innovación Geográfica Geogeeks Todos los derechos reservados</p>
       </div>
 </div>
   </footer>
   <!-- Scripts asociados -->
   <script src="./funcionalidades.js"></script>
   <script src="https://js.arcgis.com/4.25/"></script>
-  <script src="./app.js"></script>
-  <script src="./app2.js"></script>
+  <script src="./mapaSencillo.js"></script>
+  <script src="./swipe.js"></script>
   <script src="./mapT.js"></script>
   <script src="./popUp.js"></script>
-  <script src="./ajax.js"></script>
+  <script src="./carrusel.js"></script>
 </body>
 </html>
